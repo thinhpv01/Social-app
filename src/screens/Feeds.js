@@ -144,7 +144,9 @@ const Feeds = ({ route, navigation }) => {
         style={{ paddingTop: 8 }}
         data={data}
         keyExtractor={(item, index) => item.title + index.toString()}
-        renderItem={RenderItem}
+        renderItem={({ item }) => (
+          <RenderItem item={item} navigation={navigation} />
+        )}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.contentContainerStyle}
         onMomentumScrollBegin={onMomentumScrollBegin}
